@@ -102,6 +102,86 @@
     --transition-speed: 0.2s;
   }
 
+ .site-nav {
+    background-color: var(--primary-color); /* Matches your #0b5394 */
+    color: white;
+    height: 64px; /* Standard Google Sites height */
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Google Sans', Roboto, Arial, sans-serif;
+}
+
+.nav-content {
+    width: 100%;
+    max-width: 1200px; /* Keeps content centered on wide screens */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Area */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.35rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+}
+
+.nav-brand svg {
+    height: 24px;
+    width: 24px;
+    fill: white;
+}
+
+/* Menu Links */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    padding: 20px 0; /* Increases clickable area */
+}
+
+.nav-links a:hover {
+    color: white;
+    opacity: 1;
+}
+
+/* The 'Active' line under Calculator */
+.nav-links a.active {
+    font-weight: 700;
+    color: white;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 10px; /* Positions line slightly up from bottom */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+}
+
+/* Mobile Responsive Hide */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Hides links on mobile to prevent clutter */
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 
   /* --- Base Styles --- */
@@ -457,6 +537,25 @@
 </head>
 <body>
 
+<nav class="site-nav">
+    <div class="nav-content">
+        <div class="nav-brand">
+             <svg viewBox="0 0 24 24">
+                <path d="M18,18.5H6C5.17,18.5 4.5,17.83 4.5,17V8H2V6H4.5V4H19.5V6H22V8H19.5V17C19.5,17.83 18.83,18.5 18,18.5M6,8V17H18V8H6Z" />
+            </svg>
+            <span>Project GVM</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="https://www.projectgvm.com.au/home">Home</a>
+            <a href="#" class="active">Calculator</a>
+            <a href="https://www.projectgvm.com.au/learn/understanding-gvm">Learn</a>
+            <a href="https://www.projectgvm.com.au/FAQ">FAQs</a>
+            <a href="https://www.projectgvm.com.au/about">About</a>
+        </div>
+    </div>
+</nav>
+
 <div class="gvm-wrapper">
   
   <div class="gvm-header">
@@ -738,7 +837,3 @@ document.querySelectorAll('.faq-item details').forEach(faq => {
 
 </body>
 </html>
-
-
-
-
