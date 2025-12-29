@@ -109,18 +109,17 @@
     height: 64px;
     display: flex;
     align-items: center;
-    padding: 0 24px; /* Keeps a little breathing room on the edges */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 0 24px;
+    /* REMOVED: box-shadow */
     position: sticky;
     top: 0;
     z-index: 1000;
     font-family: 'Google Sans', Roboto, Arial, sans-serif;
-    width: 100%; /* Ensures the bar itself is full width */
+    width: 100%;
 }
 
 .nav-content {
-    width: 100%;      /* Forces content to fill the bar */
-    max-width: 100%;  /* REMOVED the 1200px limit */
+    width: 100%;
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -132,16 +131,16 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 1.35rem;
+    font-size: 15px; /* UPDATED: Set to 15px */
     font-weight: 400;
     letter-spacing: -0.5px;
     white-space: nowrap;
 }
 
-.nav-brand svg {
-    height: 24px;
-    width: 24px;
-    fill: white;
+/* New Style for Image Logo */
+.nav-brand img {
+    height: 24px; /* Adjust this if your logo looks too small/big */
+    width: auto;  /* Keeps the aspect ratio correct */
 }
 
 /* Menu Links */
@@ -153,7 +152,7 @@
 .nav-links a {
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 15px; /* UPDATED: Set to 15px */
     font-weight: 500;
     padding: 20px 0;
     transition: opacity 0.2s;
@@ -164,15 +163,12 @@
     opacity: 1;
 }
 
-/* The 'Active' Bold Style (No Underline) */
 .nav-links a.active {
-    font-weight: 700; /* Makes it Bold */
+    font-weight: 700;
     color: white;
     opacity: 1;
-    /* Removed the ::after block that created the underline */
 }
 
-/* Mobile Responsive Hide */
 @media (max-width: 768px) {
     .nav-links { display: none; }
 }
