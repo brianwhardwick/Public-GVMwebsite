@@ -532,6 +532,45 @@
       padding: 14px;
     }
   }
+
+footer {
+    margin-top: 50px;
+    padding: 30px 15px;
+    text-align: center;
+    background-color: #f9f9f9; /* Light grey background */
+    border-top: 1px solid #e0e0e0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .footer-links {
+    margin-bottom: 15px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: #444; /* Dark grey text */
+    font-size: 10px;
+    font-weight: 600;
+    margin: 0 5px;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    color: #000; /* Black on hover */
+    text-decoration: underline;
+  }
+
+  .footer-separator {
+    color: #ccc;
+    font-size: 10px;
+  }
+
+  .footer-copyright {
+    color: #888;
+    font-size: 8px;
+  }
+
 </style>
 </head>
 <body>
@@ -833,5 +872,28 @@ document.querySelectorAll('.faq-item details').forEach(faq => {
 
 </script>
 
+<footer>
+  <div class="footer-links">
+    <a href="https://www.projectgvm.com.au/about" target="_blank">ABOUT</a>
+    <span class="footer-separator">|</span>
+    
+    <a href="https://www.projectgvm.com.au/contact" target="_blank">CONTACT US</a>
+    <span class="footer-separator">|</span>
+    
+    <a href="https://www.projectgvm.com.au/disclaimer" target="_blank">DISCLAIMER</a>
+    <span class="footer-separator">|</span>
+    
+    <a href="https://www.projectgvm.com.au/terms" target="_blank">TERMS AND CONDITIONS</a>
+  </div>
+
+  <div class="footer-copyright">
+    &copy; 2025 Project GVM. All rights reserved.
+  </div>
+</footer>
+
 </body>
 </html>
+
+
+
+
