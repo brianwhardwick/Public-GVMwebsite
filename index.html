@@ -222,7 +222,7 @@ html, body {
   }
 
   .gvm-wrapper {
-  height: 100vh;
+  height: 100dvh;
   overflow: auto;
     font-family: Arial, sans-serif;
     color: var(--text-color);
@@ -255,10 +255,10 @@ html, body {
     margin: 0 auto;
   }
 
-/* Hide header when app is active */
-.gvm-wrapper.app-active .gvm-header {
-  display: none;
-}
+#/* Hide header when app is active */
+#.gvm-wrapper.app-active .gvm-header {
+#  display: none;
+#}
 
 
   /* --- Main Content Card (Intro) --- */
@@ -387,7 +387,7 @@ html, body {
   #app-container {
     display: none;
     width: 100%;
-    height: calc(92vh - 52px); /* was 92dvh; */
+    height: calc(92dvh - 52px); /* was 92dvh; */
     overflow: hidden;
     position: relative;
     background: white;
@@ -553,6 +553,10 @@ html, body {
     height: 85vh;   /* fallback */
     height: 85dvh;  /* preferred */
 
+    .gvm-wrapper.app-active .gvm-header {
+      display: none;
+    }
+
   }
     .seo-content, .seo-footer-card {
       padding: 20px 15px;
@@ -582,8 +586,8 @@ footer {
   .footer-links a {
     text-decoration: none;
     color: #ffffff; /* White text */
-    font-size: 10px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 400;
     margin: 0 5px;
     letter-spacing: 0.5px;
     transition: opacity 0.2s ease;
@@ -603,7 +607,7 @@ footer {
   .footer-copyright {
     color: #ffffff;
     opacity: 0.7; /* Slightly dimmed copyright text */
-    font-size: 8px;
+    font-size: 10px;
   }
 
 </style>
