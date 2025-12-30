@@ -242,14 +242,14 @@ html, body {
   }
 
   .gvm-header h1 {
-    font-size: 2.2rem;
+    font-size: 48px;
     font-weight: 700;
     margin-bottom: 5px;
     letter-spacing: -0.5px;
   }
 
   .gvm-header p {
-    font-size: 1rem;
+    font-size: 20px;
     opacity: 0.9;
     max-width: 600px;
     margin: 0 auto;
@@ -387,7 +387,7 @@ html, body {
   #app-container {
     display: none;
     width: 100%;
-    height: calc(92dvh - 52px); /* was 92dvh; */
+    height: calc(92dvh - 52px -20px - 48 px - 20px - 15px); /* was 92dvh; 92 - sticky - header top, font,font,bot */
     overflow: hidden;
     position: relative;
     background: white;
