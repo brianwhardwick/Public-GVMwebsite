@@ -924,11 +924,15 @@ document.querySelectorAll('.faq-item details').forEach(faq => {
        
     <a href="https://www.projectgvm.com.au/Terms-and-Conditions" target="_blank">TERMS AND CONDITIONS</a>
   </div>
-
+  
   <div class="footer-copyright">
-    &copy; 2026 Project GVM. All rights reserved.
+    &copy; 2025–<span id="year"></span> Project GVM. All rights reserved.
   </div>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
