@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 
-<link rel="icon" href="logo_favicon.svg" type="image/svg+xml">
+<link rel="icon" href="logo_favicon.svg" type="image/png">
 
 <link rel="canonical" href="https://projectgvm.com.au/">
 
@@ -15,6 +15,8 @@
   gtag('js', new Date());
   gtag('config', 'G-LJ12ZW06K4');
 </script>
+
+<meta name="google-site-verification" content="XYmjDFXZ8f9EY1S40y_ZlQScJsFsRazfvTSx92WDxDI" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -40,6 +42,7 @@
 <title>Free 4WD GVM Calculator - Vehicle Weight & Axle Loads </title>
 
 <meta name="description" content="Free Australian 4WD GVM calculator to estimate payload, axle loads and vehicle weight. Built using real vehicle geometry to help you stay legal, safe and compliant." />
+
 
 <script type="application/ld+json">
 {
@@ -222,7 +225,7 @@ html, body {
   }
 
   .gvm-wrapper {
-  height: calc(100dvh - 50px);
+  calc(100dvh - 50px);
   overflow: auto;
     font-family: Arial, sans-serif;
     color: var(--text-color);
@@ -242,14 +245,14 @@ html, body {
   }
 
   .gvm-header h1 {
-    font-size: 48px;
+    font-size: 48px; #was 2.2rem, changed to match size 36 font (x1.33);
     font-weight: 700;
     margin-bottom: 5px;
     letter-spacing: -0.5px;
   }
 
   .gvm-header p {
-    font-size: 20px;
+    font-size: 20px; #was 1rem;
     opacity: 0.9;
     max-width: 600px;
     margin: 0 auto;
@@ -259,6 +262,7 @@ html, body {
 .gvm-wrapper.app-active .gvm-header {
   display: none;
 }
+
 
 
   /* --- Main Content Card (Intro) --- */
@@ -387,7 +391,7 @@ html, body {
   #app-container {
     display: none;
     width: 100%;
-    height: calc(100dvh - 120px); /* was 92dvh -52px; */
+    height: calc(92dvh - 52px); /* was 92dvh; */
     overflow: hidden;
     position: relative;
     background: white;
@@ -550,14 +554,10 @@ html, body {
     .gvm-header h1 { font-size: 1.6rem; }
     .gvm-header p { font-size: 0.95rem; }
     #app-container {
-    height: 90vh;   /* fallback */
-    height: 90dvh;  /* preferred */
-
-    #.gvm-wrapper.app-active .gvm-header {
-    #  display: none;
-    #}
-
+    height: 85vh;   /* fallback */
+    height: 85dvh;  /* preferred */
   }
+
     .seo-content, .seo-footer-card {
       padding: 20px 15px;
     }
@@ -570,6 +570,7 @@ html, body {
     footer {
         display: none;
     }
+
   }
 
 footer {
@@ -605,13 +606,13 @@ footer {
   #.footer-separator {
   #  color: #ffffff;
   #  opacity: 0.5; /* Dimmed separator */
-  #  font-size: 11px;
+  #  font-size: 10px;
   #}
 
   .footer-copyright {
     color: #ffffff;
     opacity: 0.7; /* Slightly dimmed copyright text */
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 400;
     margin: 0 5px;
     letter-spacing: 0.5px;
@@ -631,7 +632,7 @@ footer {
         <div class="nav-links">
             <a href="https://www.projectgvm.com.au/home">Home</a>
             <a href="#" class="active">Calculator</a>
-            <a href="https://www.projectgvm.com.au/learn/calculator-working">Learn</a>
+            <a href="https://www.projectgvm.com.au/learn/understanding-gvm">Learn</a>
             <a href="https://www.projectgvm.com.au/FAQ">FAQs</a>
             <a href="https://www.projectgvm.com.au/about">About</a>
         </div>
@@ -718,7 +719,7 @@ footer {
     <div class="start-box">
 
 <p style="font-size: 0.9rem; color: #555; margin-bottom: 12px; text-align: left;">
-  Step 1 of 2: Getting Started
+  Step 1 of 3: Getting Started
 </p>
 
       <label class="checkbox-label">
@@ -843,6 +844,26 @@ This tool is ideal for touring setups, tradespeople, off-road builds, and anyone
     </div>
   </div>
 
+<footer>
+  <div class="footer-links">
+    <a href="https://www.projectgvm.com.au/about" target="_blank">ABOUT</a>
+    <span class="footer-separator">|</span>
+    
+    <a href="https://www.projectgvm.com.au/about#h.hbevz7u1cblr" target="_blank">CONTACT US</a>
+    <span class="footer-separator">|</span>
+       
+    <a href="https://www.projectgvm.com.au/Terms-and-Conditions" target="_blank">TERMS AND CONDITIONS</a>
+  </div>
+
+  <div class="footer-copyright">
+    &copy; 2025-<span id="year"></span> Project GVM. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </div>
 
 <script>
@@ -918,29 +939,6 @@ document.querySelectorAll('.faq-item details').forEach(faq => {
 
 </script>
 
-<footer>
-  <div class="footer-links">
-    <a href="https://www.projectgvm.com.au/about" target="_blank">ABOUT</a>
-    <span class="footer-separator">|</span>
-    
-    <a href="https://www.projectgvm.com.au/about#h.hbevz7u1cblr" target="_blank">CONTACT US</a>
-    <span class="footer-separator">|</span>
-       
-    <a href="https://www.projectgvm.com.au/Terms-and-Conditions" target="_blank">TERMS AND CONDITIONS</a>
-  </div>
-  
-  <div class="footer-copyright">
-    &copy; 2025-<span id="year"></span> Project GVM. All rights reserved.
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>
-
-
-
-
