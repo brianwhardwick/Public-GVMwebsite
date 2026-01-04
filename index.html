@@ -568,8 +568,8 @@ html, body {
     .gvm-header h1 { font-size: 1.6rem; }
     .gvm-header p { font-size: 0.95rem; }
     #app-container {
-    height: 85vh;   /* fallback */
-    height: 85dvh;  /* preferred */
+    height: calc(100vh - 70px);   /* fallback */
+    height: calc(100dvh - 70px);  /* preferred */
   }
 
     .seo-content, .seo-footer-card {
@@ -956,3 +956,7 @@ document.querySelectorAll('.faq-item details').forEach(faq => {
 
 </body>
 </html>
+
+
+
+
