@@ -405,7 +405,7 @@ html, body {
   #app-container {
     display: none;
     width: 100%;
-    height: calc(100dvh - 50px); /* was 92dvh; */
+    height: calc(100dvh - 70px); /* was 92dvh; */
     overflow: hidden;
     position: relative;
     background: white;
@@ -567,32 +567,25 @@ html, body {
   @media (max-width: 768px) {
     .gvm-header h1 { font-size: 1.6rem; }
     .gvm-header p { font-size: 0.95rem; }
-
-    /* Force the wrapper to have zero padding when active */
-    .gvm-wrapper.app-active {
-        padding: 0 !important;
-        margin: 0 !important;
-        height: calc(100dvh - 50px) !important;
-    }
-
     #app-container {
-        /* Exact calculation: 100% viewport height minus 50px nav bar */
-        height: calc(100dvh - 50px) !important;
-        width: 100% !important;
-        
-        /* Remove card styling */
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        margin: 0 !important;
+    height: calc(100vh - 70px);   /* fallback */
+    height: calc(100dvh - 70px);  /* preferred */
+  }
+
+    .seo-content, .seo-footer-card {
+      padding: 20px 15px;
     }
 
-    /* Ensure these are definitely gone */
-    footer, .seo-footer, .seo-content {
-        display: none !important;
+    .start-btn {
+      width: 100%;
+      padding: 14px;
     }
-}
 
+    footer {
+        display: none;
+    }
 
+  }
 
 footer {
     margin-top: 10px;
@@ -926,25 +919,15 @@ button.addEventListener("click", () => {
     'value': 1
   });
 
-  // Hide the text content
   introContent.style.display = "none";
   seoFooter.style.display = "none";
-  
-  // Explicitly hide the footer
-  document.querySelector("footer").style.display = "none";
-
-  // --- NEW: Lock the screen scroll ---
-  document.body.classList.add("lock-scroll");
-
-  // Show the app
   appContainer.style.display = "block";
-  document.querySelector(".gvm-wrapper").classList.add("app-active");
-  
-  iframe.src = APP_URL;
-  
-  // Scroll to top one last time before locking
-  window.scrollTo(0, 0);
 
+  document.querySelector(".gvm-wrapper").classList.add("app-active");
+  iframe.src = APP_URL;
+  window.scrollTo({ top: 0 });
+
+  // Optional: micro-feedback
   button.textContent = "Loading your vehicle...";
   button.disabled = true;
 });
@@ -979,7 +962,5 @@ document.querySelectorAll('.faq-item details').forEach(faq => {
 
 </body>
 </html>
-
-
 
 
