@@ -56,57 +56,82 @@ img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
   margin: 0 auto;
 }
 
-/* --- 4. Navigation (Site Header) --- */
-.navbar {
-  background-color: var(--color-primary);
-  height: 60px;
-  display: flex;
-  align-items: center;
-  /* CHANGED: sticky to fixed */
-  position: fixed; 
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 0 1.5rem;
-  /* Optional: Add a shadow so it stands out when scrolling over white cards */
-  box-shadow: var(--shadow-sm);
+
+/* --- Navigation Bar Styles --- */
+.site-nav {
+    background-color: var(--primary-color);
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    /* REMOVED: box-shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    width: 100%;
 }
 
-.navbar-content {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.nav-content {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  color: var(--color-white);
-  font-size: 1.25rem;
-  font-weight: bold;
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    
+    /* Link Styling Overrides */
+    text-decoration: none; /* Removes underline */
+    color: white;          /* Forces text to be white */
+    cursor: pointer;
 }
 
-.nav-menu {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.nav-brand:hover {
+    opacity: 0.9;          /* Slight fade effect on hover */
 }
 
-.nav-link {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition);
+.nav-brand img {
+    height: 36px; 
+    width: auto;  
 }
 
-.nav-link:hover, .nav-link.active { color: var(--color-white); }
+/* Menu Links */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 20px 0;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+    color: white;
+    opacity: 1;
+}
+
+.nav-links a.active {
+    font-weight: 700;
+    color: white;
+    opacity: 1;
+}
+
+
 
 /* --- 5. UI Components --- */
 
