@@ -20,7 +20,7 @@
   </div>
 </footer>
 
-<script src="/script.js"></script>
+<script src="/assets/js/main.js"></script>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
