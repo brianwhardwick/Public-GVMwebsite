@@ -4,5 +4,19 @@
         <a href="/disclaimer.html">DISCLAIMER</a> | 
         <a href="/privacy.html">PRIVACY</a>
     </div>
-    <p>© 2025-<span id="year"></span> Project GVM. All rights reserved.</p>
+    <p>© <span id="copyright-year"></span> Project GVM. All rights reserved.</p>
 </footer>
+
+<script>
+    (function() {
+        const startYear = 2025;
+        const currentYear = new Date().getFullYear();
+        const display = document.getElementById('copyright-year');
+        
+        if (currentYear > startYear) {
+            display.textContent = `${startYear}–${currentYear}`;
+        } else {
+            display.textContent = startYear;
+        }
+    })();
+</script>
