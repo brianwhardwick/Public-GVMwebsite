@@ -160,21 +160,45 @@ img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
   margin: 1.5rem 0;
 }
 
-/* --- 6. Footer --- */
-.site-footer {
-  padding: 2rem 1rem;
-  text-align: center;
-  color: var(--color-white);
-  background-color: var(--color-primary);
-}
+/*** --- 6. Footer --- ***/
+footer {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 10px 10px;
+    text-align: center;
+    background-color: var(--primary-color); 
+    color: #ffffff;
+    border-top: none;
+    font-family: Arial, sans-serif;
+  }
 
-.footer-nav { margin-bottom: 1rem; }
-.footer-nav a { 
-  color: var(--color-white); 
-  text-decoration: none; 
-  margin: 0 0.5rem; 
-  font-size: 0.85rem;
-}
+  .footer-links {
+    margin-bottom: 10px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: #ffffff; /* White text */
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0 5px;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    opacity: 0.8; /* Slightly fade on hover */
+    text-decoration: underline;
+  }
+
+  .footer-copyright {
+    color: #ffffff;
+    opacity: 1.0; /* Slightly dimmed copyright text */
+    font-size: 11px;
+    font-weight: 400;
+    margin: 0 5px;
+    letter-spacing: 0.5px;
+  }
 
 /* --- 7. Responsive --- */
 @media (max-width: 768px) {
