@@ -58,45 +58,54 @@ img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
 
 
 /* --- Navigation Bar Styles --- */
-.navbar {
-    background-color: var(--color-primary); 
+.site-nav {
+    background-color: var(--primary-color);
     color: white;
-    height: 60px; /* Increased slightly for better breathing room */
+    height: 50px;
     display: flex;
     align-items: center;
+    padding: 0 24px;
+    /* REMOVED: box-shadow */
     position: sticky;
     top: 0;
     z-index: 1000;
+    font-family: Arial, sans-serif;
     width: 100%;
 }
 
-.navbar-content {
+.nav-content {
     width: 100%;
-    max-width: var(--container-max);
-    margin: 0 auto;
-    padding: 0 24px;
+    margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 /* Matches <a class="brand"> */
-.brand {
+.nav-brand {
     display: flex;
     align-items: center;
     gap: 12px;
     font-size: 20px;
-    font-weight: 600;
-    text-decoration: none;
-    color: white;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    
+    /* Link Styling Overrides */
+    text-decoration: none; /* Removes underline */
+    color: white;          /* Forces text to be white */
+    cursor: pointer;
 }
 
-.brand img {
+.nav-brand:hover {
+    opacity: 0.9;          /* Slight fade effect on hover */
+}
+
+.nav-brand img {
     height: 32px;
     width: auto;
 }
 
-/* Matches <ul class="nav-menu"> */
 .nav-menu {
     display: flex;
     gap: 30px;
@@ -105,24 +114,31 @@ img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
     padding: 0;
 }
 
-/* Matches <a class="nav-link"> */
-.nav-link {
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    font-size: 16px; /* 20px was quite large for a standard nav */
+    font-size: 20px;
     font-weight: 500;
-    transition: var(--transition);
+    padding: 20px 0;
+    transition: opacity 0.2s;
 }
 
-.nav-link:hover {
-    color: var(--color-secondary); /* Uses your yellow accent for hover */
-}
-
-/* Active state for current page */
-.nav-link.active {
+.nav-links a:hover {
     color: white;
-    border-bottom: 2px solid var(--color-secondary);
+    opacity: 1;
 }
+
+.nav-links a.active {
+    font-weight: 700;
+    color: white;
+    opacity: 1;
+}
+
 
 
 
