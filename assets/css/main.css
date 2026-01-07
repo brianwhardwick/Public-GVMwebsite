@@ -40,7 +40,8 @@ img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
 /* --- 3. Layout Components --- */
 .main-wrapper {
   min-height: calc(100vh - 50px);
-  padding: 2rem 1rem;
+  /* Added padding-top to account for the 60px fixed header height */
+  padding: calc(60px + 2rem) 1rem 2rem 1rem;
 }
 
 .container {
@@ -61,10 +62,16 @@ img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
   height: 60px;
   display: flex;
   align-items: center;
-  position: sticky;
+  /* CHANGED: sticky to fixed */
+  position: fixed; 
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
   padding: 0 1.5rem;
+  /* Optional: Add a shadow so it stands out when scrolling over white cards */
+  box-shadow: var(--shadow-sm);
 }
 
 .navbar-content {
