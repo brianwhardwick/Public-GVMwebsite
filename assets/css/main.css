@@ -58,7 +58,7 @@ img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
 
 
 /* --- Navigation Bar Styles --- */
-.site-nav {
+.navbar {
     background-color: var(--primary-color);
     color: white;
     height: 50px;
@@ -73,7 +73,7 @@ img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
     width: 100%;
 }
 
-.nav-content {
+.navbar-content {
     width: 100%;
     margin: 0;
     display: flex;
@@ -81,7 +81,7 @@ img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
     align-items: center;
 }
 
-.nav-brand {
+.navbar-brand {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -96,22 +96,22 @@ img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
     cursor: pointer;
 }
 
-.nav-brand:hover {
+.navbar-brand:hover {
     opacity: 0.9;          /* Slight fade effect on hover */
 }
 
-.nav-brand img {
+.navbar-brand img {
     height: 36px; 
     width: auto;  
 }
 
 /* Menu Links */
-.nav-links {
+.navbar-links {
     display: flex;
     gap: 30px;
 }
 
-.nav-links a {
+.navbar-links a {
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     font-size: 20px;
@@ -120,12 +120,12 @@ img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
     transition: opacity 0.2s;
 }
 
-.nav-links a:hover {
+.navbar-links a:hover {
     color: white;
     opacity: 1;
 }
 
-.nav-links a.active {
+.navbar-links a.active {
     font-weight: 700;
     color: white;
     opacity: 1;
