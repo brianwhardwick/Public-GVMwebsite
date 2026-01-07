@@ -1,0 +1,177 @@
+/* --- 1. Variables & Root --- */
+:root {
+  /* Brand Colors */
+  --color-primary: #0b5394;
+  --color-primary-dark: #083d6e;
+  --color-secondary: #ffc107;
+  --color-accent: #fff8e1;
+  
+  /* Text & Surface */
+  --color-text-main: #333333;
+  --color-text-muted: #666666;
+  --color-bg-light: #f4f7f6;
+  --color-white: #ffffff;
+  
+  /* Spacing & Borders */
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 30px rgba(0,0,0,0.1);
+  --container-max: 1100px;
+  --transition: all 0.2s ease-in-out;
+}
+
+/* --- 2. Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text-main);
+  background-color: var(--color-primary); /* Keeps your signature blue background */
+}
+
+h1, h2, h3 { line-height: 1.2; margin-bottom: 1rem; color: var(--color-primary); }
+p { margin-bottom: 1rem; }
+img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
+
+/* --- 3. Layout Components --- */
+.main-wrapper {
+  min-height: calc(100vh - 50px);
+  padding: 2rem 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+/* For pages like "About" with a narrow, readable column */
+.container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- 4. Navigation (Site Header) --- */
+.navbar {
+  background-color: var(--color-primary);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 1.5rem;
+}
+
+.navbar-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--color-white);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active { color: var(--color-white); }
+
+/* --- 5. UI Components --- */
+
+/* Standard Content Card */
+.card {
+  background: var(--color-white);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+}
+
+/* Hero Section */
+.page-header {
+  text-align: center;
+  color: var(--color-white);
+  padding: 2rem 0 3rem;
+}
+
+.page-header h1 { color: var(--color-white); font-size: 3rem; margin: 0; }
+.page-header p { font-size: 1.25rem; opacity: 0.9; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Alerts / Callouts */
+.callout {
+  padding: 1.25rem;
+  border-left: 5px solid var(--color-secondary);
+  background: var(--color-accent);
+  border-radius: 4px;
+  margin: 1.5rem 0;
+}
+
+/* --- 6. Footer --- */
+.site-footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.footer-nav { margin-bottom: 1rem; }
+.footer-nav a { 
+  color: var(--color-white); 
+  text-decoration: none; 
+  margin: 0 0.5rem; 
+  font-size: 0.85rem;
+}
+
+/* --- 7. Responsive --- */
+@media (max-width: 768px) {
+  .nav-menu { display: none; } /* Add a hamburger menu later if needed */
+  .page-header h1 { font-size: 2rem; }
+  .card { padding: 1.5rem; }
+}
