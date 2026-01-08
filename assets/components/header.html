@@ -7,24 +7,42 @@
         <ul class="nav-menu">
             <li><a href="/home.html" class="nav-links">Home</a></li>
             <li><a href="/calculator/" class="nav-links">Calculator</a></li>
-            <li><a href="/learn/" class="nav-links">Learn</a></li>
+            
+            <li class="nav-dropdown">
+                <a href="/learn/" class="nav-links">Learn</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/learn/gvm.html">Understanding GVM</a></li>
+                    <li><a href="/learn/calculator.html">How The Calculator Works</a></li>
+                    <li><a href="/learn/weighbridge.html">Using A Weighbridge</a></li>
+                    <li><a href="/learn/towing.html">Towing Safely</a></li>
+                    <li><a href="/learn/accessories.html">Top Accessories</a></li>
+                    <li><a href="/learn/airbags.html">Airbags</a></li>
+                </ul>
+            </li>
+
             <li><a href="/faq/" class="nav-links">FAQs</a></li>
+
             <li><a href="/about/" class="nav-links">About</a></li>
         </ul>
     </div>
 </nav>
 
+
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Get the current URL path
         const currentPath = window.location.pathname;
-        // Select all navigation links
-        const navLinks = document.querySelectorAll('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links, .dropdown-menu a');
 
         navLinks.forEach(link => {
-            // Check if the link's href matches the current path
             if (link.getAttribute('href') === currentPath) {
                 link.classList.add('active');
+                
+                // If it's a child of a dropdown, keep the parent highlighted too
+                const parentDropdown = link.closest('.nav-dropdown');
+                if (parentDropdown) {
+                    parentDropdown.querySelector('.nav-links').classList.add('active');
+                }
             }
         });
     });
