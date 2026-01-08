@@ -26,24 +26,3 @@
         </ul>
     </div>
 </nav>
-
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-links, .dropdown-menu a');
-
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active');
-                
-                // If it's a child of a dropdown, keep the parent highlighted too
-                const parentDropdown = link.closest('.nav-dropdown');
-                if (parentDropdown) {
-                    parentDropdown.querySelector('.nav-links').classList.add('active');
-                }
-            }
-        });
-    });
-</script>
