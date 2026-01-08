@@ -79,6 +79,27 @@ const GVMApp = (function() {
         }
     };
 
+
+    // --- FAQ Plus Box
+    document.addEventListener('DOMContentLoaded', function() {
+        const acc = document.getElementsByClassName("faq-question");
+
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                // Toggle the "active" class on the button
+                this.classList.toggle("active");
+
+                // Toggle the panel visibility
+                const panel = this.nextElementSibling;
+                if (panel.classList.contains("open")) {
+                    panel.classList.remove("open");
+                } else {
+                    panel.classList.add("open");
+                }
+            });
+        }
+    });
+
     const launchCalculator = () => {
         const btn = document.querySelector(config.selectors.startBtn);
         const container = document.querySelector(config.selectors.appContainer);
