@@ -594,62 +594,80 @@ img.hero-logo {
 
 
 
-  /* --- Header Section --- */
+ /* --- Header Section --- */
+.main-header {
+  background-color: var(--color-primary);
+  text-align: center;
+  color: var(--color-white);
+
+  /* Reset default margins */
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  /* Padding inside header */
+  padding: 20px 10px 30px 10px;
+
+  border-radius: 0;
+}
+
+.main-header h1 {
+  color: var(--color-white);
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 0;
+  opacity: 0.95;
+
+  /* Desktop font size */
+  font-size: 2.5rem;
+}
+
+.main-header p {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 0 auto;
+}
+
+/* Hide header when app is active */
+.main-wrapper.app-active .main-header {
+  display: none;
+}
+
+/* --- Responsive Tweaks --- */
+
+/* Tablet / small desktop */
+@media (max-width: 1024px) {
+  .main-header h1 {
+    font-size: 2rem;
+  }
+  .main-header p {
+    font-size: 1.1rem;
+  }
   .main-header {
-    background-color: var(--color-primary); /* <--- Add this line */
-    text-align: center;
-    color: var(--color-white);
-    
-    /* 1. RESET default margins */
-    margin-top: 0px;
-
-    /* 2. MARGIN: The WHITE SPACE below the blue header */
-    margin-bottom: 30px; 
-
-    /* 3. PADDING: The BLUE SPACE inside the header */
-    padding-top: 1px;
-    padding-right: 10px;
-    padding-left: 10px;
-    
-    /* Increase this to make the blue box taller */
-    padding-bottom: 30px; 
-    
-    border-radius: 0px;
+    padding-top: 15px;
+    padding-bottom: 25px;
   }
+}
 
-  .main-header h1 { 
-    color: var(--color-white); /* <--- ADD THIS LINE */   
-    font-weight: 700; 
-    margin-bottom: 5px; 
-    letter-spacing: -0px;
-    opacity: 0.95;
+/* Mobile */
+@media (max-width: 768px) {
+  .main-header h1 {
+    font-size: 1.6rem;
   }
-
-  .main-header p { 
-    color: var(--color-white); /* <--- ADD THIS LINE */   
-    font-size: 20px;
-    opacity: 0.9;
-    max-width: 600px; 
-    margin-bottom: 10px; 
-    margin: 0 auto 0 auto;
+  .main-header p {
+    font-size: 0.95rem;
   }
-  
-  /* Hide header when app is active */
-  .main-wrapper.app-active .main-header { display: none; }
-
-
-  /* --- Mobile Tweaks --- */
-  @media (max-width: 768px) {
-  .main-header h1 { font-size: 1.6rem; }
-  .main-header p { font-size: 0.95rem; }
   .main-header {
     padding-top: 10px;
     padding-bottom: 15px;
   }
+
   #app-container {
     height: calc(100vh - 70px);   /* fallback */
     height: calc(100dvh - 70px);  /* preferred */
   }
+}
 
 
 
@@ -1227,4 +1245,5 @@ footer {
   .page-header h1 { font-size: 2rem; }
   .card { padding: 1.5rem; }
 }
+
 
