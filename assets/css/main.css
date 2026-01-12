@@ -619,7 +619,6 @@ img.hero-logo {
 
   .main-header h1 { 
     color: var(--color-white); /* <--- ADD THIS LINE */   
-
     font-weight: 700; 
     margin-bottom: 5px; 
     letter-spacing: -0px;
@@ -638,6 +637,19 @@ img.hero-logo {
   /* Hide header when app is active */
   .main-wrapper.app-active .main-header { display: none; }
 
+
+  /* --- Mobile Tweaks --- */
+  @media (max-width: 768px) {
+  .main-header h1 { font-size: 1.6rem; }
+  .main-header p { font-size: 0.95rem; }
+  .main-header {
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+  #app-container {
+    height: calc(100vh - 70px);   /* fallback */
+    height: calc(100dvh - 70px);  /* preferred */
+  }
 
 
 
@@ -1215,3 +1227,4 @@ footer {
   .page-header h1 { font-size: 2rem; }
   .card { padding: 1.5rem; }
 }
+
